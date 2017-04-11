@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from django.contrib.auth import views
-from .views import dashboard, register
+from .views import dashboard, register, edit
 
 urlpatterns = [
     # post views
@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         views.password_reset_confirm, name='password_reset_confirm'),
     url(r'^reset/done/$', views.password_reset_complete, name='password_reset_complete'),
+    url(r'^edit/$', edit, name='edit'),
 ]
